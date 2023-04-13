@@ -1,24 +1,13 @@
-# cs5224_project
+Ram Hemareddy AWS CICD Pipeline Code Deployment to AWS EC2 Instance
+User Data for Dependencies installations for AMAZON Linux 2:-
 
-## Prerequisite
-Installation: MySQL, flask, React.
-python version 3.9
-scikit-learn version 1.2.2
-AWS RDS MySql version 8.0
-
-## Setup Guide
-MYSQL: create a user with:
-`username: root`
-`password: admin`
-and create a database `flask`. Start the mysql service (If windows, go services - MySQL80, manually start it up).
-
-Start two terminals. 
-One of the terminal to start frontend server: 
-`cd project-app`
-`npm start`
-
-The other terminal to start backend server:
-`cd server`
-`py run.py`
-
-Go to `localhost:3000`, click on the 'search result page' to check on the changes. 
+#!/bin/bash
+sudo yum -y update
+sudo yum -y install ruby
+sudo yum -y install wget
+cd /home/ec2-user
+wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+sudo yum install -y python-pip
+sudo pip install awscli
